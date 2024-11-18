@@ -1,0 +1,68 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Pedidos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Pedidos</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="spinner-container" *ngIf="isLoading">
+    <ion-spinner></ion-spinner>
+  </div>
+  
+  <!-- Mostrar las órdenes una vez que se cargan -->
+  <ion-list *ngIf="!isLoading && data?.orders?.length > 0">
+    <ion-item *ngFor="let order of data.orders">      
+      <!-- (click)="goToOrderDetail(order._id)" -->
+      <!-- Usamos ion-grid para manejar las filas y columnas -->
+      <ion-grid>
+        <!-- Fila para los detalles de la orden -->
+        <ion-row>
+          <ion-col>
+            <ion-label>
+              <h2 [routerLink]="['/restaurant/order-detail', order._id]">Pedido ID: {{ order._id }}</h2>
+              <p>Total: {{ order.total }}</p>
+              <p>Estado: {{ order.status }}</p>
+            </ion-label>
+          </ion-col>
+        </ion-row>
+
+        <!-- Fila para los botones -->
+        <ion-row>
+          <ion-col>
+            <ion-footer>
+              <ion-buttons>
+                <ion-button (click)="updateStatus(order, 'en camino')">En Camino</ion-button>
+                <ion-button (click)="updateStatus(order, 'entregado')">Entregado</ion-button>
+                <ion-button color="danger" (click)="updateStatus(order, 'cancelado')">Cancelado</ion-button>                  
+                <ion-button 
+                color="danger" 
+                *ngIf="order.status === 'Entregado' || 
+                order.status === 'entregado' || 
+                order.status === 'Cancelado' ||
+                order.status === 'cancelado'" 
+                (click)="deleteOrder(order._id)" 
+                >
+                  Eliminar
+                </ion-button>                                  
+              </ion-buttons>
+            </ion-footer>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
+
+  <!-- Mostrar mensaje si no hay órdenes -->
+  <div *ngIf="!isLoading && data?.orders?.length === 0">
+    <p>No orders available.</p>
+  </div>
+</ion-content>

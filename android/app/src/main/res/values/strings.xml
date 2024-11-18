@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">echnelapp store</string>
+    <string name="title_activity_main">echnelapp store</string>
+    <string name="package_name">com.echnelapp.eats</string>
+    <string name="custom_url_scheme">com.echnelapp.eats</string>
+</resources>

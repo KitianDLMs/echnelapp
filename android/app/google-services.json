@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "409610281895",
+    "project_id": "echnelapp-store",
+    "storage_bucket": "echnelapp-store.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:409610281895:android:445ae0a119dc19bbe54c82",
+        "android_client_info": {
+          "package_name": "com.echnelapp.eats"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSEuXPrps1ji-6-P2igoOPMvsTlHUQKIQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

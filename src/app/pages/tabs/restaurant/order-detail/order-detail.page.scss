@@ -1,0 +1,42 @@
+.spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.details-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;    
+    padding: 16px;    
+}
+
+.error-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.details-container {
+    position: relative;
+    padding: 16px;
+}
+
+.delete-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: red;
+    /* Asegúrate de que el color sea visible */
+    font-size: 1.2em;
+}
+
+ion-icon {
+    margin-right: 5px;
+}

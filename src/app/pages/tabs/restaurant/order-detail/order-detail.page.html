@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Detalles del pedido</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- Spinner while loading, centered -->
+  <div class="spinner-container" *ngIf="isLoading">
+    <ion-spinner></ion-spinner>
+  </div>
+
+  <!-- Show order details once loaded -->
+  <div class="details-container" *ngIf="!isLoading && orderDetail">
+    <p><strong>Id del pedido:</strong> {{ details[0]._id }}</p>
+    <p><strong>Teléfono:</strong> {{ profile.phone }}</p>
+    <p><strong>Dirección:</strong> {{ address.address }}</p>
+    <p><strong>N°:</strong> {{ address.house }}</p>
+    <p><strong>Barrio:</strong> {{ address.landmark }}</p>    
+    <p><strong>Estado:</strong> {{ details[0].status }}</p>
+    <p><strong>Total:</strong> {{ details[0].grandTotal | currency }}</p>
+  </div>
+
+  <!-- Error message if order is not found -->
+  <div class="error-container" *ngIf="!isLoading && !orderDetail">
+    <p>Error loading order details. Order not found.</p>
+  </div>
+</ion-content>

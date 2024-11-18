@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Delivery</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()">
+        Cerrar sesión
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Panel de Control del Delivery</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Aquí puedes administrar tus pedidos, verlos y actualizarlos.</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button expand="full" 
+  routerLink="/restaurant/orders"
+  >    
+    Ver Pedidos
+  </ion-button>
+  <!-- <ion-button expand="full" routerLink="/restaurant/menu">
+    Gestionar Menú
+  </ion-button> -->
+</ion-content>
+
+
+

@@ -1,0 +1,32 @@
+.spinner-container {
+    display: flex;
+    justify-content: center;  /* Centra horizontalmente */
+    align-items: center;      /* Centra verticalmente */
+    height: 100vh;            /* O usa 100% si prefieres, para llenar toda la vista vertical */
+    width: 100%;              /* Asegura que el contenedor ocupe todo el ancho disponible */
+    position: absolute;       /* Opcional si necesitas que el spinner esté superpuesto */
+    top: 0;
+    left: 0;
+  }
+
+  .status-buttons {
+    display: flex;
+    justify-content: space-around; /* Espacio uniforme entre los botones */
+    margin-top: 10px; /* Margen superior para separación */
+  }
+  
+  ion-grid {
+    margin-bottom: 20px; /* Separar las tarjetas */
+  }
+  
+  ion-footer {
+    margin-top: 10px; /* Separación entre detalles y botones */
+  }
+
+  ion-button[fill="clear"] {
+    font-size: 1em;
+  }
+
+  ion-icon {
+    margin-right: 5px;
+  }
